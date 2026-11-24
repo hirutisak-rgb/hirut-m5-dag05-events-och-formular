@@ -34,6 +34,14 @@ console.log(handelse.target);	//elementet
 // 4. Anropa uppdateraMeny("alla") direkt, och koppla filterknapparna med kopplaFilter.
 // TODO
 
+function uppdateraMeny(filter: Filter): void {
+const ratter = filtreraMeny(meny, filter);
+visaMeny(lista, ratter);
+uppdateraRubrik(rubrik, ratter.length);
+}
+
+uppdateraMeny("alla");
+kopplaFilter(filterGrupp, uppdateraMeny);
 
 // DEL 3 (fördjupning): beställningen ---------------------------------------
 // 5. let order: OrderRad[] = []; Koppla kopplaLaggTill(lista, ...) så att klick lägger till i order och visar den
