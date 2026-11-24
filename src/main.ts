@@ -20,6 +20,13 @@ const filterGrupp = hamta("#filter");
 //    Ta bort preventDefault igen när du provat.
 // TODO
 
+//const knapp = document.querySelector("#hero .knapp");
+const knapp = hamta("#hero .knapp");
+knapp.addEventListener("click", (handelse) => {
+console.log("Klick!");
+console.log(handelse.type);	// "click"
+console.log(handelse.target);	//elementet
+}); 
 
 // DEL 2: filtret ----------------------------------------------------------
 // 3. Skriv funktionen uppdateraMeny(filter: Filter): void: hämta rätter med filtreraMeny, visa dem med visaMeny,
