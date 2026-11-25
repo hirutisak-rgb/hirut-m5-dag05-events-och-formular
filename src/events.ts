@@ -10,9 +10,11 @@ import type { Filter } from "./typer";
 //    Tips: handelse.target.closest('button[data-filter]')
 export function kopplaFilter(grupp: HTMLElement, vidVal: (filter: Filter) => void): void {
   // TODO
-  const grupp = document.querySelector("#filter");
-  grupp.addEventLisner("click", (handelse) => {
-  const knapp = handelse.target.closest("button[data-filter]");
+  grupp.addEventListener("click", (handelse) => {
+    if (!(handelse.target instanceof HTMLElement)) {
+      return;
+  }
+  const knapp = handelse.target.closest<HTMLButtonElement>('button[data-filter]');
 
   if(!knapp) {
     return;		//Klickade på något annant"
